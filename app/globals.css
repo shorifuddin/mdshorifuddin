@@ -179,12 +179,13 @@ a,button,input,textarea{font:inherit}
   .site{padding:20px 14px 110px}
   .topbar{margin-bottom:70px}
   .layout{grid-template-columns:1fr;gap:18px}
-  /* Bottom tab bar: fixed, scales with screen width, never scrolls, frosted glass */
+  /* Bottom tab bar: fixed, fully transparent, box-wise tabs like desktop */
   .side-nav{order:0;position:fixed;left:0;right:0;bottom:0;top:auto;z-index:50;flex-direction:row;overflow:visible;
-    padding:8px 8px calc(8px + env(safe-area-inset-bottom));gap:8px;border-radius:16px 16px 0 0;
-    background:rgba(255,255,255,.55);-webkit-backdrop-filter:blur(14px) saturate(1.5);backdrop-filter:blur(14px) saturate(1.5);
-    box-shadow:0 -8px 24px rgba(35,55,75,.10)}
-  .side-nav a{flex:1 1 0;min-width:0;background:transparent;height:clamp(56px,15vw,78px);font-size:clamp(10px,2.8vw,12.5px)}
+    padding:8px 8px calc(8px + env(safe-area-inset-bottom));gap:8px;background:transparent;
+    -webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none;border-radius:0}
+  .side-nav a{flex:1 1 0;min-width:0;background:transparent;border:1px solid var(--line);border-radius:10px;
+    height:clamp(56px,15vw,78px);font-size:clamp(10px,2.8vw,12.5px)}
+  .side-nav a.active{border-color:transparent}
   .side-nav a svg{width:clamp(20px,5.4vw,26px);height:clamp(20px,5.4vw,26px)}
   .profile-card{order:1;padding:0 20px 28px;margin-top:100px}
   .profile-photo{margin-top:-100px}
@@ -216,9 +217,6 @@ html.dark-mode .work-image,html.dark-mode .blog-image{color:rgba(20,30,50,.5)}
 html.dark-mode .field input,html.dark-mode .field textarea{border-bottom-color:#4a5a70}
 html.dark-mode .contact-panel button{border-color:#4a5a70}
 html.dark-mode .site-footer{border-top:1px solid var(--line)}
-@media(max-width:760px){
-  html.dark-mode .side-nav{background:rgba(22,31,44,.55)}
-}
 
 @media(prefers-reduced-motion:reduce){
   .site,.profile-card,.side-nav,.page-enter,.logo svg{animation:none!important}

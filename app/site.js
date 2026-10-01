@@ -1,7 +1,8 @@
 'use client';
-import {useEffect, useRef, useState} from 'react';
+import {useEffect, useRef, useState, useLayoutEffect} from 'react';
 import Link from 'next/link';
 import {usePathname} from 'next/navigation';
+const useIsoLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 /* ---------- Edit your own details here ---------- */
 export const profile = {
@@ -81,6 +82,22 @@ export default function AppShell({children}) {
     setDark(next);
   };
 
+  // Active-tab pill: measured from the real tab geometry so it always lands exactly
+  // under the active tab on every screen size (no CSS calc guesswork).
+  const linkRefs = useRef([]);
+  const [pill, setPill] = useState(null);
+  useIsoLayoutEffect(() => {
+    const place = () => {
+      const el = linkRefs.current[idx];
+      if (!el) return;
+      setPill({l: el.offsetLeft, t: el.offsetTop, w: el.offsetWidth, h: el.offsetHeight});
+    };
+    place();
+    window.addEventListener('resize', place);
+    window.addEventListener('orientationchange', place);
+    return () => { window.removeEventListener('resize', place); window.removeEventListener('orientationchange', place); };
+  }, [idx]);
+
   return <main className="site">
     <header className="topbar">
       <button className="theme-toggle" aria-label="Toggle theme" onClick={toggleTheme}>
@@ -91,9 +108,9 @@ export default function AppShell({children}) {
       <Profile />
       <ContentCard pathname={pathname} tone={footerTone[idx]}>{children}</ContentCard>
       <nav className="side-nav" aria-label="Primary navigation">
-        <span className="nav-indicator" style={{'--i': idx}} />
+        <span className="nav-indicator" style={pill ? {left: pill.l, top: pill.t, width: pill.w, height: pill.h} : {opacity: 0}} />
         {nav.map(([icon, label, href], i) =>
-          <Link key={href} href={href} className={i === idx ? 'active' : ''}>
+          <Link key={href} href={href} className={i === idx ? 'active' : ''} ref={el => { linkRefs.current[i] = el; }}>
             <Icon name={icon} size={22} /><span>{label}</span>
           </Link>)}
       </nav>

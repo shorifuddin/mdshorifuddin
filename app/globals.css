@@ -145,7 +145,8 @@ a,button,input,textarea{font:inherit}
 .side-nav{background:var(--card);border-radius:16px;padding:25px;display:flex;flex-direction:column;align-items:center;gap:18px;height:max-content;z-index:30;box-shadow:var(--shadow)}
 .side-nav a{width:68px;height:68px;background:var(--tile);color:#41546d;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;font-size:11px;font-weight:500;text-decoration:none;transition:background .25s,color .25s,transform .25s,box-shadow .25s}
 .side-nav{position:relative}
-.nav-indicator{position:absolute;top:25px;left:25px;width:68px;height:68px;border-radius:10px;background:var(--blue);box-shadow:0 8px 18px rgba(56,114,220,.25);transform:translateY(calc(var(--i)*86px));transition:transform .5s cubic-bezier(.22,.8,.3,1);z-index:0;pointer-events:none}
+.nav-indicator{position:absolute;border-radius:10px;background:var(--blue);box-shadow:0 8px 18px rgba(56,114,220,.25);z-index:0;pointer-events:none;
+  transition:left .45s cubic-bezier(.3,.85,.3,1),top .45s cubic-bezier(.3,.85,.3,1),width .45s cubic-bezier(.3,.85,.3,1),height .45s cubic-bezier(.3,.85,.3,1)}
 .side-nav a{position:relative;z-index:1}
 .side-nav a:hover{transform:translateY(-2px);box-shadow:0 7px 16px rgba(34,56,82,.08)}
 .side-nav a.active,.side-nav a.active:hover{background:transparent;color:#fff;box-shadow:none}
@@ -168,7 +169,6 @@ a,button,input,textarea{font:inherit}
   .skills-band{padding:42px 28px}
   .side-nav{padding:12px;gap:10px}
   .side-nav a{width:60px;height:60px;font-size:10px}
-  .nav-indicator{top:12px;left:12px;width:60px;height:60px;transform:translateY(calc(var(--i)*70px))}
   .client-row{flex-wrap:wrap;justify-content:center}
 }
 /* ---------- Tablet: single-column grids before they get cramped ---------- */
@@ -176,17 +176,16 @@ a,button,input,textarea{font:inherit}
   .services,.two-col,.blog-grid,.masonry{grid-template-columns:1fr}
 }
 @media(max-width:760px){
-  .site{padding:28px 14px 130px}
-  .topbar{margin-bottom:115px}
+  .site{padding:20px 14px 110px}
+  .topbar{margin-bottom:70px}
   .layout{grid-template-columns:1fr;gap:18px}
-  /* Bottom tab bar: fixed, compact, never scrolls */
+  /* Bottom tab bar: fixed, scales with screen width, never scrolls, frosted glass */
   .side-nav{order:0;position:fixed;left:0;right:0;bottom:0;top:auto;z-index:50;flex-direction:row;overflow:visible;
     padding:8px 8px calc(8px + env(safe-area-inset-bottom));gap:8px;border-radius:16px 16px 0 0;
+    background:rgba(255,255,255,.55);-webkit-backdrop-filter:blur(14px) saturate(1.5);backdrop-filter:blur(14px) saturate(1.5);
     box-shadow:0 -8px 24px rgba(35,55,75,.10)}
-  .side-nav a{flex:1 1 0;min-width:0;height:56px;font-size:10px}
-  .side-nav a svg{width:20px;height:20px}
-  .nav-indicator{top:8px;left:8px;width:calc((100% - 48px)/5);height:56px;
-    transform:translateX(calc(var(--i)*((100% - 48px)/5 + 8px)))}
+  .side-nav a{flex:1 1 0;min-width:0;background:transparent;height:clamp(56px,15vw,78px);font-size:clamp(10px,2.8vw,12.5px)}
+  .side-nav a svg{width:clamp(20px,5.4vw,26px);height:clamp(20px,5.4vw,26px)}
   .profile-card{order:1;padding:0 20px 28px;margin-top:100px}
   .profile-photo{margin-top:-100px}
   .content-card{order:2}
@@ -217,6 +216,9 @@ html.dark-mode .work-image,html.dark-mode .blog-image{color:rgba(20,30,50,.5)}
 html.dark-mode .field input,html.dark-mode .field textarea{border-bottom-color:#4a5a70}
 html.dark-mode .contact-panel button{border-color:#4a5a70}
 html.dark-mode .site-footer{border-top:1px solid var(--line)}
+@media(max-width:760px){
+  html.dark-mode .side-nav{background:rgba(22,31,44,.55)}
+}
 
 @media(prefers-reduced-motion:reduce){
   .site,.profile-card,.side-nav,.page-enter,.logo svg{animation:none!important}

@@ -27,6 +27,8 @@ export default function Home() {
           <div className="photo-ring"><img src={profile.photo} alt={profile.name} /></div>
           <div className="photo-card pc1">Laravel<small>Backend · APIs · ERP</small></div>
           <div className="photo-card pc2">React Native<small>Mobile · Google Play</small></div>
+          <div className="photo-card pc3">TypeScript<small>React · Vue · Web</small></div>
+          <div className="photo-card pc4">PostgreSQL<small>MySQL · Databases</small></div>
         </div></Reveal>
       </div>
     </header>

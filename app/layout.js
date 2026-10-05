@@ -66,8 +66,8 @@ const jsonLd = {
     'https://www.facebook.com/shorifuddinbeps/',
     'https://sites.google.com/view/mdshorifuddin',
     'https://www.researchgate.net/profile/Md-Uddin-253',
-    'https://ieeexplore.ieee.org/document/11491404',
-    'https://arxiv.org/abs/2507.16183',
+    'https://ieeexplore.ieee.org/author/714440223929229',
+    'https://www.semanticscholar.org/author/MD.-Shorif-Uddin/2364700811',
   ],
   knowsAbout: [
     'Laravel', 'PHP', 'React Native', 'TypeScript', 'React.js', 'Vue.js',
@@ -78,12 +78,19 @@ const jsonLd = {
     {
       '@type': 'ScholarlyArticle',
       name: 'Comparative Study of LLMs and Transformers for Bangla Healthcare Paraphrasing',
-      url: 'https://ieeexplore.ieee.org/document/11491404',
+      url: 'https://ieeexplore.ieee.org/abstract/document/11491404',
+      sameAs: [
+        'https://www.semanticscholar.org/paper/Comparative-Study-of-LLMs-and-Transformers-for-Islam-Uddin/6cd0265f876f075049f5df82de45d18e5738abcd',
+      ],
     },
     {
       '@type': 'ScholarlyArticle',
       name: 'BIDWESH — Bangla Hate-Speech Detection Dataset',
       url: 'https://arxiv.org/abs/2507.16183',
+      sameAs: [
+        'https://www.researchgate.net/publication/393922964_BIDWESH_A_Bangla_Regional_Based_Hate_Speech_Detection_Dataset',
+        'https://ui.adsabs.harvard.edu/abs/2025arXiv250716183H/abstract',
+      ],
     },
   ],
   seeks: { '@type': 'Demand', name: 'Remote Software Engineering roles' },

@@ -65,6 +65,7 @@ const jsonLd = {
     'https://www.instagram.com/mr.shorif/',
     'https://www.facebook.com/shorifuddinbeps/',
     'https://sites.google.com/view/mdshorifuddin',
+    'https://www.researchgate.net/profile/Md-Uddin-253',
     'https://ieeexplore.ieee.org/document/11491404',
     'https://arxiv.org/abs/2507.16183',
   ],

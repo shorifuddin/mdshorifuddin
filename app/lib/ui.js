@@ -111,7 +111,7 @@ export function Navbar() {
 /* ---------- Footer ---------- */
 export function Footer() {
   return <footer><div className="wrap foot-inner">
-    <p>© 2026 {profile.name}. Built with React & Next.js.</p>
+    <p>© 2026 {profile.name}. Built with React & Next.js. <a className="foot-link" href="https://shorif-uddin.vercel.app/home-1" target="_blank" rel="noreferrer">Classic version ↗</a></p>
     <div className="socials">
       {profile.socials.map(s => <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label}>
         <Icon name={s.icon} size={17} />

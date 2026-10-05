@@ -248,6 +248,8 @@ a{color:inherit}
 footer{border-top:1px solid var(--border);padding:44px 0;margin-top:40px}
 .foot-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
 .foot-inner p{color:var(--muted);font-size:13px;margin:0}
+.foot-link{color:var(--text);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.foot-link:hover{color:var(--ink)}
 .socials{display:flex;gap:10px}
 .socials a{width:40px;height:40px;border-radius:12px;border:1px solid var(--border);background:var(--card);
   display:grid;place-items:center;color:var(--text);text-decoration:none;transition:.2s}

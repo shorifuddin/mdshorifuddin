@@ -29,5 +29,13 @@ export default function sitemap() {
     lastModified: new Date(),
     changeFrequency: p.startsWith('/blog/') ? 'monthly' : 'weekly',
     priority: p === '' ? 1 : p.startsWith('/blog/') || p.startsWith('/works/') ? 0.8 : 0.9,
+    ...(p === ''
+      ? {
+          images: [
+            `${SITE}/md-shorif-uddin-software-engineer.jpg`,
+            `${SITE}/og-image.jpg`,
+          ],
+        }
+      : {}),
   }));
 }

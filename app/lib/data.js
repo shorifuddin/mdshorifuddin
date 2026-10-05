@@ -74,12 +74,12 @@ export const education = [
   {
     period: '2022 – 2026',
     title: 'BSc in Computer Science & Engineering',
-    org: 'Southeast University, Dhaka — CGPA 3.62',
+    org: 'Southeast University, Dhaka',
   },
   {
     period: '2017 – 2021',
     title: 'Diploma in Computer Technology',
-    org: 'Feni Computer Institute, Feni — CGPA 3.68',
+    org: 'Feni Computer Institute, Feni',
   },
 ];
 

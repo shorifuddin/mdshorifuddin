@@ -1,4 +1,4 @@
-# Bostami-style Next.js portfolio recreation
+# Next.js portfolio recreation
 
 This is a clean-room recreation of the public-facing Bostami portfolio demo layout. It includes the five public routes, shared profile/sidebar, responsive navigation, pastel background, cards, page transitions, sticky desktop profile/navigation, scrolling behavior, and light/dark theme toggle.
 

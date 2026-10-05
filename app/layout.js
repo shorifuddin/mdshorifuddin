@@ -1,14 +1,28 @@
 import './globals.css';
-import AppShell from './site';
+import { Navbar, Footer } from './lib/ui';
+import { profile } from './lib/data';
 
-export const metadata = {title: 'Md. Shorif Uddin | Software Engineer', description: 'Portfolio of Md. Shorif Uddin — Software Engineer building ERP systems, SaaS platforms and mobile apps. Published AI/NLP researcher.'};
+export const metadata = {
+  title: `${profile.name} — Software Engineer`,
+  description: profile.intro,
+  openGraph: {
+    title: `${profile.name} — Software Engineer`,
+    description: profile.intro,
+    type: 'website',
+  },
+};
 
-export default function RootLayout({children}) {
-  return <html lang="en" suppressHydrationWarning>
-    <head>
-      <script dangerouslySetInnerHTML={{__html: "try{if(localStorage.getItem('bostami-theme')==='dark')document.documentElement.classList.add('dark-mode')}catch(e){}"}} />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-    </head>
-    <body><AppShell>{children}</AppShell></body>
-  </html>;
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en" data-theme="dark">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var t=localStorage.getItem('theme')||localStorage.getItem('bostami-theme')||'dark';document.documentElement.dataset.theme=t==='light'?'light':'dark';}catch(e){}})()` }} />
+      </head>
+      <body>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
+    </html>
+  );
 }

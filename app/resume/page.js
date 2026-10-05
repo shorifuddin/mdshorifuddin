@@ -1,52 +1,55 @@
-import {Title, Icon} from '../site';
+'use client';
+import { useEffect, useRef } from 'react';
+import { Reveal, SectionHead, Icon } from '../lib/ui';
+import { profile, experience, education, skills, tags } from '../lib/data';
 
-const education = [
-  ['2022 - 2026', 'BSc in Computer Science & Engineering', ' - Southeast University,', 'Dhaka — CGPA 3.62'],
-  ['2017 - 2022', 'Diploma in Computer Technology', ' - Feni Engineering Institute,', 'Feni — CGPA 3.68'],
-  ['2016 - 2017', 'Secondary School Certificate (SSC)', ' - Feni Govt. Pilot High School,', 'Feni — GPA 4.14']
-];
-const experience = [
-  ['2022 - Present', 'Software Engineer', '', 'KuiperZ, Dhaka'],
-  ['2022', 'Software Developer', '', 'Bdcalling IT Ltd, Dhaka']
-];
-const skills = [['Laravel', 92, '#ed6e69'], ['PHP', 90, '#8d73ce'], ['MySQL', 88, '#5d84ce'], ['React Native', 85, '#bc5dea'], ['React.js', 84, '#ed6e69'], ['TypeScript', 80, '#5d84ce']];
-const knowledges = ['RESTful APIs', 'ERP Systems', 'Mobile App Development', 'Database Design', 'Eloquent ORM', 'NLP', 'LLMs', 'Bangla NLP', 'Testing & Debugging', 'Performance Tuning', 'Agile', 'Problem Solving'];
-
-function Column({icon, title, items, col}) {
-  return <div>
-    <h3 className="col-title"><Icon name={icon} size={26} sw={1.5} style={{color: 'var(--blue)'}} /> {title}</h3>
-    {items.map(([date, name, rest, sub], i) =>
-      <div className={'resume-item ' + ((col + i) % 2 === 0 ? 'pink' : 'blue')} key={name}>
-        <small>{date}</small>
-        <h4>{name}<span>{rest}</span></h4>
-        <p>{sub}</p>
-      </div>)}
+function SkillBar({ n, v }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    const el = ref.current; if (!el) return;
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { el.style.width = v + '%'; io.disconnect(); }
+    }), { threshold: 0.4 });
+    io.observe(el); return () => io.disconnect();
+  }, [v]);
+  return <div className="skill">
+    <div><span>{n}</span><span>{v}%</span></div>
+    <div className="bar"><i ref={ref} /></div>
   </div>;
 }
 
 export default function Resume() {
   return <>
-    <div className="content-section">
-      <Title>Resume</Title>
-      <div className="two-col">
-        <Column icon="cap" title="Education" items={education} col={0} />
-        <Column icon="briefcase" title="Experience" items={experience} col={1} />
+    <section className="section" style={{ paddingTop: 150 }}><div className="wrap">
+      <SectionHead eyebrow="Resume" title="Experience & Skills"
+        sub="Four years of production engineering across ERP, SaaS, mobile and AI research." />
+      <div className="grid c2" style={{ alignItems: 'start' }}>
+        <Reveal><div>
+          <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 21, margin: '0 0 26px' }}>Experience</h3>
+          <div className="timeline">
+            {experience.map(e => <div className="tl-item" key={e.title + e.period}>
+              <span className="period">{e.period}</span>
+              <h3>{e.title}</h3><div className="org">{e.org}</div><p>{e.desc}</p>
+            </div>)}
+          </div>
+          <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 21, margin: '44px 0 26px' }}>Education</h3>
+          <div className="timeline">
+            {education.map(e => <div className="tl-item" key={e.title}>
+              <span className="period">{e.period}</span>
+              <h3>{e.title}</h3><div className="org">{e.org}</div>
+            </div>)}
+          </div>
+        </div></Reveal>
+        <Reveal delay={120}><div>
+          <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 21, margin: '0 0 26px' }}>Working Skills</h3>
+          {skills.map(s => <SkillBar key={s.n} n={s.n} v={s.v} />)}
+          <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 21, margin: '44px 0 22px' }}>Knowledge</h3>
+          <div className="tags">{tags.map(t => <span key={t}>{t}</span>)}</div>
+          <div style={{ marginTop: 36 }}>
+            <a href={profile.cv} className="btn primary"><Icon name="download" size={16} /> Download Full CV</a>
+          </div>
+        </div></Reveal>
       </div>
-    </div>
-    <div className="skills-band">
-      <div className="two-col">
-        <div>
-          <h3 className="col-title plain">Working Skills</h3>
-          {skills.map(([n, v, c]) => <div className="skill" key={n}>
-            <div><span>{n}</span><span>{v}%</span></div>
-            <div className="bar"><i style={{width: v + '%', background: c}} /></div>
-          </div>)}
-        </div>
-        <div>
-          <h3 className="col-title plain">Knowledges</h3>
-          <div className="tags">{knowledges.map(k => <span key={k}>{k}</span>)}</div>
-        </div>
-      </div>
-    </div>
+    </div></section>
   </>;
 }

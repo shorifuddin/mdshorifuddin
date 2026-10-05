@@ -275,9 +275,14 @@ footer{border-top:1px solid var(--border);padding:44px 0;margin-top:40px}
   .grid.c2,.grid.c3,.blog-grid,.work-grid{grid-template-columns:1fr}
   .hero{padding:130px 0 70px}
   .hero-stats{grid-template-columns:repeat(2,1fr);gap:22px}
-  .hero-photo{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .photo-ring{grid-column:1/-1;justify-self:center}
-  .photo-card{position:static;margin:0;padding:10px 12px;text-align:center}
+  .hero-photo{display:block}
+  .photo-ring{margin:0 auto}
+  .photo-card{position:absolute;padding:8px 10px;font-size:11px}
+  .photo-card small{font-size:10px}
+  .pc1{left:-6px;top:8px}
+  .pc3{right:-6px;top:8px}
+  .pc4{left:-6px;bottom:8px}
+  .pc2{right:-6px;bottom:8px}
   .section{padding:60px 0}
   .cta-band{padding:48px 28px}
   .article-nav{grid-template-columns:1fr}

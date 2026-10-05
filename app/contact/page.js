@@ -14,7 +14,6 @@ export default function Contact() {
     setSent(true);
   };
   const cards = [
-    { icon: 'phone', label: 'Phone', value: profile.phone, href: 'tel:' + profile.phone.replace(/\s/g, '') },
     { icon: 'mail', label: 'Email', value: profile.email, href: 'mailto:' + profile.email },
     { icon: 'pin', label: 'Location', value: profile.location, href: null },
   ];

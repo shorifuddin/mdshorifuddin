@@ -10,7 +10,12 @@ export function generateMetadata({ params }) {
   return p ? {
     title: `${p.title} — ${'Md. Shorif Uddin'}`,
     description: p.excerpt,
-    openGraph: { title: p.title, description: p.excerpt, type: 'article' },
+    openGraph: {
+      title: p.title,
+      description: p.excerpt,
+      type: 'article',
+      images: p.image ? [{ url: p.image, alt: p.title }] : [],
+    },
   } : {};
 }
 

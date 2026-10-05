@@ -8,7 +8,18 @@ export function generateStaticParams() {
 }
 export function generateMetadata({ params }) {
   const w = works.find(x => x.slug === params.slug);
-  return w ? { title: `${w.title} — Case Study` } : {};
+  if (!w) return {};
+  const desc = `${w.tagline} Built by ${'Md. Shorif Uddin'} with ${w.stack.join(', ')}.`;
+  return {
+    title: `${w.title} — Case Study`,
+    description: desc,
+    openGraph: {
+      title: `${w.title} — Case Study | ${'Md. Shorif Uddin'}`,
+      description: desc,
+      type: 'article',
+      images: w.image ? [{ url: w.image, alt: w.title }] : [],
+    },
+  };
 }
 
 export default function CaseStudy({ params }) {

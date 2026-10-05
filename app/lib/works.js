@@ -55,7 +55,7 @@ export const works = [
     slug: 'erp-systems',
     title: 'ERP Systems',
     category: 'Web App',
-    image: null,
+    image: '/works/erp-systems.png',
     tagline: 'Large-scale ERP for e-commerce and hotel operations.',
     stack: ['Laravel', 'MySQL', 'Vue.js', 'REST APIs'],
     timeline: '2022 – 2025',

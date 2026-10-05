@@ -277,12 +277,12 @@ footer{border-top:1px solid var(--border);padding:44px 0;margin-top:40px}
   .hero-stats{grid-template-columns:repeat(2,1fr);gap:22px}
   .hero-photo{display:block}
   .photo-ring{margin:0 auto}
-  .photo-card{position:absolute;padding:8px 10px;font-size:11px}
-  .photo-card small{font-size:10px}
-  .pc1{left:-6px;top:8px}
-  .pc3{right:-6px;top:8px}
-  .pc4{left:-6px;bottom:8px}
-  .pc2{right:-6px;bottom:8px}
+  .photo-card{position:absolute;padding:7px 9px;font-size:10.5px}
+  .photo-card small{font-size:9.5px}
+  .pc1{left:8px;top:8px}
+  .pc3{right:8px;top:8px}
+  .pc4{left:8px;bottom:8px}
+  .pc2{right:8px;bottom:8px}
   .section{padding:60px 0}
   .cta-band{padding:48px 28px}
   .article-nav{grid-template-columns:1fr}

@@ -8,7 +8,7 @@ export const profile = {
     'Software Engineer from Dhaka, Bangladesh with 4+ years of experience shipping production systems — large-scale ERP, cloud SaaS platforms and mobile apps used by real customers every day. Also a published AI/NLP researcher.',
   photo: '/profile.jpg',
   email: 'shorifcoder@gmail.com',
-  location: 'Nikunja-2, Dhaka, Bangladesh',
+  location: 'Dhaka, Bangladesh',
   cv: '/Shorif_Uddin_CV.pdf',
   socials: [
     { label: 'GitHub', href: 'https://github.com/shorifuddin', icon: 'github' },

@@ -18,6 +18,13 @@ export const profile = {
     { label: 'X', href: 'https://x.com/mrshorifuddin', icon: 'xlogo' },
     { label: 'Email', href: 'mailto:shorifcoder@gmail.com', icon: 'mail' },
   ],
+  research: [
+    { label: 'Google Scholar', href: 'https://scholar.google.com/citations?user=7HQvzWkAAAAJ&hl=en', icon: 'scholar' },
+    { label: 'ORCID', href: 'https://orcid.org/0009-0000-9444-024X', icon: 'orcid' },
+    { label: 'ResearchGate', href: 'https://www.researchgate.net/profile/Md-Uddin-253', icon: 'researchgate' },
+    { label: 'IEEE Xplore', href: 'https://ieeexplore.ieee.org/author/714440223929229', icon: 'ieee' },
+    { label: 'Semantic Scholar', href: 'https://www.semanticscholar.org/author/MD.-Shorif-Uddin/2364700811', icon: 'semanticscholar' },
+  ],
   stats: [
     { n: '4+', l: 'Years Experience' },
     { n: '6', l: 'Featured Projects' },

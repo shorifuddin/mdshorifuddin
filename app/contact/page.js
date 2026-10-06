@@ -30,8 +30,14 @@ export default function Contact() {
             : <div key={c.label} className="info-card">{inner}</div>;
         })}
         <div className="socials" style={{ marginTop: 20 }}>
-          {profile.socials.map(s => <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label}>
+          {profile.socials.map(s => <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} title={s.label}>
             <Icon name={s.icon} size={17} />
+          </a>)}
+        </div>
+        <div className="socials research" style={{ marginTop: 12 }}>
+          <span className="research-label">Research</span>
+          {profile.research.map(r => <a key={r.label} href={r.href} target="_blank" rel="noreferrer" aria-label={r.label} title={r.label}>
+            <Icon name={r.icon} size={17} />
           </a>)}
         </div>
       </div></Reveal>

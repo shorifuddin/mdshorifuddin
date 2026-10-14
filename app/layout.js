@@ -45,7 +45,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: profile.name,
-  alternateName: 'Shorif Uddin',
+  alternateName: ['Shorif Uddin', 'MD Shorif Uddin', 'Md Shorif Uddin', 'MD. Shorif Uddin'],
   url: SITE,
   image: `${SITE}/md-shorif-uddin-software-engineer.jpg`,
   jobTitle: 'Software Engineer',

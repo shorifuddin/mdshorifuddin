@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Reveal, SectionHead, Icon } from '../lib/ui';
 import { profile, education } from '../lib/data';
 
-export const metadata = { title: 'About — Md. Shorif Uddin' };
+export const metadata = { title: 'About' };
 
 export default function About() {
   return <>

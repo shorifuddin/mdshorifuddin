@@ -8,7 +8,7 @@ export function generateStaticParams() {
 export function generateMetadata({ params }) {
   const p = posts.find(x => x.slug === params.slug);
   return p ? {
-    title: `${p.title} — ${'Md. Shorif Uddin'}`,
+    title: p.title,
     description: p.excerpt,
     openGraph: {
       title: p.title,

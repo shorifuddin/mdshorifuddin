@@ -5,7 +5,7 @@ import { profile } from './lib/data';
 const SITE = 'https://mdshorifuddin.vercel.app';
 const TITLE = 'Md. Shorif Uddin — Software Engineer | Laravel, React Native, TypeScript';
 const DESC =
-  'Software Engineer from Dhaka, Bangladesh with 4+ years of experience building production systems — Laravel backends, large-scale ERP, cloud SaaS platforms and React Native mobile apps. Available for remote work.';
+  'Software Engineer from Dhaka, Bangladesh with 4+ years of experience building production systems — Laravel backends, large-scale ERP, cloud SaaS platforms and React Native mobile apps. Available for remote work. Open to remote roles with software companies in Wales and across the UK.';
 
 export const metadata = {
   metadataBase: new URL(SITE),
@@ -19,6 +19,8 @@ export const metadata = {
     'React Native Developer', 'TypeScript Developer', 'Vue.js Developer', 'Full-Stack Developer',
     'Backend Developer', 'ERP Systems', 'REST API Development', 'PostgreSQL', 'MySQL',
     'Mobile App Developer', 'Bangladesh Developer', 'Hire Remote Developer',
+    'Software Engineer Wales', 'Remote Software Engineer UK', 'Laravel Developer UK',
+    'Remote Developer Wales', 'Hire Software Engineer Wales',
   ],
   authors: [{ name: profile.name, url: SITE }],
   creator: profile.name,

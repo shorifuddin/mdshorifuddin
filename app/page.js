@@ -87,6 +87,20 @@ export default function Home() {
       </div></Reveal>
     </div></section>
 
+    {/* UK & WALES */}
+    <section className="section" style={{ paddingTop: 0 }}><div className="wrap">
+      <SectionHead eyebrow="UK & Wales" title="Open to Remote Roles in Wales & the UK"
+        sub="Based in Dhaka, working remotely across time zones — now focusing on software companies in Wales and across the UK." />
+      <Reveal><div className="card">
+        <h3>Remote Software Engineer for Wales & UK Teams</h3>
+        <p>4+ years building production software — Laravel backends, large-scale ERP systems, cloud SaaS platforms and React Native mobile apps. Comfortable with UK working hours and async-first remote collaboration, and keen to join a software team in Cardiff, Swansea, or anywhere in Wales and the UK.</p>
+        <p>If you&apos;re hiring a remote software engineer in Wales or the UK, let&apos;s talk.</p>
+        <div style={{ marginTop: 20 }}>
+          <Link href="/contact" className="btn">Get In Touch <Icon name="arrow" size={16} /></Link>
+        </div>
+      </div></Reveal>
+    </div></section>
+
     {/* CTA */}
     <section className="section" style={{ paddingTop: 0 }}><div className="wrap">
       <Reveal><div className="cta-band">

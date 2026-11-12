@@ -13,6 +13,7 @@ export default function About() {
           <p className="lead">I&apos;m a Software Engineer from Dhaka, Bangladesh with 4+ years of experience building software that runs real businesses — large-scale ERP systems, cloud SaaS platforms and mobile apps used by real customers every day.</p>
           <p className="lead">My stack is PHP (Laravel), React, TypeScript, React Native, Vue.js, MySQL and PostgreSQL. I&apos;m also a published AI/NLP researcher with an IEEE conference paper on Bangla healthcare paraphrasing and the BIDWESH Bangla hate-speech detection dataset.</p>
           <p className="lead">I care about systems that survive contact with production: auditable payroll engines, APIs that keep their promises for a decade, and mobile apps people open every week because the rewards make it worth it.</p>
+          <p className="lead">I&apos;m Md. Shorif Uddin — also written as MD Shorif Uddin or Shorif Uddin. Right now I&apos;m focusing on remote roles with software companies in Wales and across the UK: based in Dhaka, working remotely on UK hours, and keen to join a team in Cardiff, Swansea, or anywhere in Wales and the UK.</p>
           <div style={{ display: 'flex', gap: 14, marginTop: 28, flexWrap: 'wrap' }}>
             <Link href="/works" className="btn primary">See My Works <Icon name="arrow" size={16} /></Link>
             <Link href="/contact" className="btn ghost">Contact Me</Link>
